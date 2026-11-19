@@ -1,5 +1,25 @@
 import { describe, expect, it } from 'vitest';
-import { about, booking, features, footer, hero, intro, nav, rooms, site, stats } from './site.ts';
+import {
+	about,
+	attractions,
+	blogPosts,
+	booking,
+	faqs,
+	features,
+	footer,
+	gallery,
+	hero,
+	intro,
+	nav,
+	offers,
+	perks,
+	roomFromPrice,
+	rooms,
+	site,
+	spaTreatments,
+	stats,
+	testimonials
+} from './site.ts';
 
 describe('site — The Happy Inn (from reference screenshot)', () => {
 	it('carries the inn identity and contact details from the screenshot', () => {
@@ -10,12 +30,12 @@ describe('site — The Happy Inn (from reference screenshot)', () => {
 		expect(site.weather.temperature).toBe('26°');
 	});
 
-	it('has unique nav labels and hrefs, Home active', () => {
+	it('has unique nav labels and real page hrefs', () => {
 		const labels = nav.map((item) => item.label);
 		const hrefs = nav.map((item) => item.href);
 		expect(new Set(labels).size).toBe(labels.length);
 		expect(new Set(hrefs).size).toBe(hrefs.length);
-		expect(nav[0]).toMatchObject({ label: 'Home', active: true });
+		expect(nav.map((item) => item.href)).toEqual(['/', '/rooms', '/specials', '/about', '/area']);
 		expect(nav).toHaveLength(5);
 	});
 });
@@ -75,6 +95,54 @@ describe('rooms', () => {
 			expect(room.description.length).toBeGreaterThan(0);
 			expect(room.image.alt.length).toBeGreaterThan(0);
 		}
+	});
+});
+
+describe('rooms detail data (audit upgrade)', () => {
+	it('every room has a unique slug, facts and a 3-photo gallery', () => {
+		const slugs = rooms.map((r) => r.slug);
+		expect(new Set(slugs).size).toBe(slugs.length);
+		for (const room of rooms) {
+			expect(room.slug).toMatch(/^[a-z0-9-]+$/);
+			expect(room.size).toContain('sq ft');
+			expect(room.bed.length).toBeGreaterThan(0);
+			expect(room.occupancy).toBeGreaterThanOrEqual(1);
+			expect(room.amenities.length).toBeGreaterThanOrEqual(6);
+			expect(room.gallery).toHaveLength(3);
+			expect(room.longDescription.length).toBeGreaterThanOrEqual(2);
+		}
+		expect(roomFromPrice).toBe(99);
+	});
+});
+
+describe('upgrade content: offers, reviews, faq, area, spa, blog', () => {
+	it('has four offers, six attributed testimonials and eight FAQs', () => {
+		expect(offers).toHaveLength(4);
+		expect(testimonials.length).toBeGreaterThanOrEqual(6);
+		for (const t of testimonials) {
+			expect(t.rating).toBeGreaterThanOrEqual(4);
+			expect(t.source.length).toBeGreaterThan(0);
+			expect(t.date.length).toBeGreaterThan(0);
+		}
+		expect(faqs.length).toBeGreaterThanOrEqual(8);
+		for (const faq of faqs) expect(faq.a.length).toBeGreaterThan(30);
+	});
+
+	it('has perks, attractions, spa treatments, gallery and blog posts', () => {
+		expect(perks).toHaveLength(4);
+		expect(attractions).toHaveLength(6);
+		expect(spaTreatments.length).toBeGreaterThanOrEqual(6);
+		for (const t of spaTreatments) expect(t.price).toBeGreaterThan(0);
+		expect(gallery.length).toBeGreaterThanOrEqual(10);
+		const postSlugs = blogPosts.map((p) => p.slug);
+		expect(new Set(postSlugs).size).toBe(postSlugs.length);
+		for (const post of blogPosts) expect(post.body.length).toBeGreaterThanOrEqual(3);
+	});
+
+	it('every feature card and footer link points at a real page', () => {
+		for (const f of features) expect(f.href).toMatch(/^\//);
+		for (const column of footer.columns)
+			for (const link of column.links) expect(link.href).toMatch(/^\//);
 	});
 });
 

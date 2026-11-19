@@ -37,6 +37,8 @@
 	<svg class={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
 {:else if name === 'palm'}
 	<svg class={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-8" /><path d="M12 14c0-3-2.5-5-6-5 1 3 3 5 6 5Z" /><path d="M12 14c0-3 2.5-5 6-5-1 3-3 5-6 5Z" /><path d="M12 13c0-3.5-1-6-4-8 2.5-.5 5 1 6 3" /><path d="M12 13c0-3.5 1-6 4-8-2.5-.5-5 1-6 3" /></svg>
+{:else if name === 'star'}
+	<svg class={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" /></svg>
 {:else if name === 'facebook'}
 	<svg class={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h2.5V4.5H14A4.5 4.5 0 0 0 9.5 9v2H7v3.5h2.5V22H13v-7.5h2.6l.4-3.5h-3V9a1 1 0 0 1 1-1Z" /></svg>
 {:else if name === 'twitter'}

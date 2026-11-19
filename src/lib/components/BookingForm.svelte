@@ -19,8 +19,8 @@
 		const wanted = new URLSearchParams(window.location.search).get('room');
 		if (wanted && rooms.some((r) => r.slug === wanted)) roomSlug = wanted;
 	});
-	let checkIn = $state('2026-03-08');
-	let checkOut = $state('2026-03-09');
+	let checkIn = $state('2027-03-08');
+	let checkOut = $state('2027-03-09');
 	let guests = $state(2);
 	let name = $state('');
 	let email = $state('');

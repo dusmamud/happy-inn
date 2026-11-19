@@ -1,0 +1,26 @@
+# CI — runs on every push and pull request to main.
+# Node 26 LTS, matching the verified dev stack. No secrets needed:
+# the starter builds a static site; nothing is deployed from here.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 26
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run check # svelte-check — 0 errors, 0 warnings
+      - run: npm test # Vitest unit tests, next to the code
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e # Playwright smoke tests on the built site

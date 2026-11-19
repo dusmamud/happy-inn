@@ -1,0 +1,32 @@
+{
+  "name": "happy-inn",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "imports": {
+    "#lib/*": "./src/lib/*"
+  },
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:all": "npm test && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@sveltejs/adapter-static": "^4.0.1",
+    "@sveltejs/kit": "^3.3.1",
+    "@tailwindcss/vite": "^4.3.5",
+    "sharp": "^0.35.5",
+    "svelte": "^5.58.0",
+    "svelte-check": "^4.7.8",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
+  }
+}

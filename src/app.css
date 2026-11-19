@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: "Playfair Display";
+	src: url("/fonts/playfair-400.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Playfair Display";
+	src: url("/fonts/playfair-500.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Playfair Display";
+	src: url("/fonts/playfair-600.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Playfair Display";
+	src: url("/fonts/playfair-700.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Playfair Display";
+	src: url("/fonts/playfair-400i.woff2") format("woff2");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Playfair Display";
+	src: url("/fonts/playfair-500i.woff2") format("woff2");
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter-400.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter-500.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter-600.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter-700.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@theme {
+	--font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+	--font-sans: "Inter", ui-sans-system, system-ui, sans-serif;
+	--color-gold: #b9975b;
+	--color-gold-deep: #7d5f27;
+	--color-gold-soft: #d9c08a;
+	--color-ink: #2e2e2a;
+	--color-coal: #3b3b36;
+	--color-coal-deep: #2b2b27;
+	--color-mist: #f6f4ef;
+	--color-linen: #efede7;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--font-sans);
+	color: var(--color-ink);
+	background: #fff;
+	-webkit-font-smoothing: antialiased;
+}
+
+::selection {
+	background: var(--color-gold);
+	color: #fff;
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-gold-deep);
+	outline-offset: 2px;
+}
+
+.no-scrollbar {
+	scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.hero-fade {
+	transition: opacity 300ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	.hero-fade {
+		transition: none;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+	}
+}

@@ -1,8 +1,12 @@
 # The Happy Inn
 
+**Live:** https://happy-inn.pages.dev · **Repo:** https://github.com/dusmamud/happy-inn
+
 One-page hotel website recreated **same-to-same from the client's reference
 screenshot**, built to dusmamud's frontend standard on the verified
-SvelteKit starter.
+SvelteKit starter. Deploys to Cloudflare Pages via GitHub Actions
+(`.github/workflows/deploy.yml`, same pattern as creatix) on every push
+to `main`.
 
 - **Stack:** Svelte 5.58 (runes only) · SvelteKit 3.3 · Vite 8.3 ·
   Tailwind CSS 4.3 · TypeScript 6 · adapter-static (prerender + SSR)

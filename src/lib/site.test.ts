@@ -58,9 +58,9 @@ describe('hero and booking', () => {
 		expect(booking.buttonLabel).toBe('Check Room Availability');
 	});
 
-	it('intro names Staunton, Virginia and lists five extras', () => {
-		expect(intro.text).toContain('Staunton, Virginia');
-		expect(intro.text).toContain('Smithsonian Magazine');
+	it('intro names San Francisco and lists five extras', () => {
+		expect(intro.text).toContain('San Francisco');
+		expect(intro.text).toContain('Golden Gate Park');
 		expect(intro.extras).toHaveLength(5);
 	});
 });

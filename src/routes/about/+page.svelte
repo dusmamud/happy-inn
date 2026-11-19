@@ -9,7 +9,7 @@
 
 <svelte:head>
 	<title>About The Inn — The Happy Inn</title>
-	<meta name="description" content="The story of The Happy Inn: an 1880’s conch cottage and 1904 Queen Anne Victorian mansion in Staunton, Virginia, revived by hosts Dean and Paul." />
+	<meta name="description" content="The story of The Happy Inn: an 1880’s conch cottage and 1904 Queen Anne Victorian mansion in San Francisco’s Inner Richmond, revived by hosts Dean and Paul." />
 </svelte:head>
 
 <main id="main">

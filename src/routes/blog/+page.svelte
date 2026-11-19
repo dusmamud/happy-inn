@@ -7,7 +7,7 @@
 
 <svelte:head>
 	<title>Journal — The Happy Inn</title>
-	<meta name="description" content="Stories from The Happy Inn and Staunton, Virginia — weekend guides, spa rituals and garden weddings." />
+	<meta name="description" content="Stories from The Happy Inn and San Francisco — weekend guides, spa rituals and garden weddings." />
 </svelte:head>
 
 <main id="main">

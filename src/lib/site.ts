@@ -8,7 +8,7 @@ export const site = {
 	name: 'The Happy Inn',
 	tagline: 'It Is The Perfect Escape',
 	description:
-		'The Happy Inn is a twenty-three room hotel located in downtown Staunton, Virginia — voted one of the best small towns in America by Smithsonian Magazine.',
+		'The Happy Inn is a twenty-three room hotel in San Francisco’s Inner Richmond — steps from Golden Gate Park, the Presidio and the Clement Street shops.',
 	url: 'https://happy-inn.pages.dev',
 	locale: 'en-US',
 	currency: 'USD',
@@ -70,7 +70,7 @@ export const booking = {
 };
 
 export const intro = {
-	text: 'The Happy Inn is a twenty-three room hotel located in downtown Staunton, Virginia, voted one of the best small towns in America by Smithsonian Magazine.',
+	text: 'The Happy Inn is a twenty-three room hotel in the heart of San Francisco’s Inner Richmond, a short stroll from Golden Gate Park and the bay breeze off the Pacific.',
 	extras: [
 		'Delightful extras enhance your relaxation and renewal',
 		'A wonderful variety of body services encase you in luxury',
@@ -89,7 +89,7 @@ export const about = {
 			label: 'About Us',
 			heading: 'It Is The Perfect Escape',
 			paragraphs: [
-				'The resort flows gracefully along the Eastern Shore, canopied by ancient oaks and caressed by bay breezes. It is a setting made for total relaxation, and the luxurious 9,000-square-foot european style spa is its crown jewel.',
+				'The inn sits above the Inner Richmond, canopied by old cypress trees and caressed by bay breezes off the Pacific. It is a setting made for total relaxation, and the luxurious 9,000-square-foot european style spa is its crown jewel.',
 				'Today, the house has been revived to show off its full glory. Dean and Paul were instrumental in treating the house to the period ornamentation they feel it deserved. The Happy Inn still retains many of its original features.'
 			]
 		},
@@ -107,7 +107,7 @@ export const about = {
 			label: 'Locate Us',
 			heading: 'Find Your Way To Us',
 			paragraphs: [
-				'You will find us at 4319 Roosevelt Street, San Francisco, CA 94143 — a short stroll from the neighbourhood treetops, gardens and the bay breeze of the Eastern Shore.',
+				'You will find us at 4319 Roosevelt Street, San Francisco, CA 94143 — a short stroll from Golden Gate Park, the Clement Street shops and the bay breeze off the Pacific.',
 				'Call us any time on (012) 345 - 6789 or write to bookings@the-happy-inn.com and we will happily plan your arrival.'
 			]
 		}
@@ -168,10 +168,10 @@ export const rooms: Room[] = [
 		slug: 'queen-suite-deluxe',
 		name: 'Queen Suite Deluxe',
 		description:
-			'This room offers all the amenities of a great honeymoon suite or from extended romantic getaway. Watch the world of Key West go by.',
+			'This room offers all the amenities of a great honeymoon suite or from extended romantic getaway. Watch the world of the Richmond District go by.',
 		longDescription: [
 			'Our most loved suite pairs a dark wood queen bed with golden linens, a reading chair by the window and warm lamplight in the evening. It is the room couples ask for by name.',
-			'The bathroom carries a deep soaking tub, and the window seat looks over the garden — an easy place to watch the world of Key West go by with your morning coffee.'
+			'The bathroom carries a deep soaking tub, and the window seat looks over the garden — an easy place to watch the world of the Richmond District go by with your morning coffee.'
 		],
 		price: 189,
 		unit: '/night',
@@ -339,7 +339,7 @@ export const offers = [
 		badge: '1 Night Free',
 		price: 'From $99/night',
 		description:
-			'The third night is on us. Slow down, explore the Eastern Shore properly, and let the garden do the rest.',
+			'The third night is on us. Slow down, explore San Francisco properly, and let the garden do the rest.',
 		includes: ['3 nights for the price of 2', 'Complimentary breakfast', 'Pool & beach towels', 'Free parking'],
 		image: { stem: '/images/about-pool', alt: 'Pool and garden at The Happy Inn' }
 	},
@@ -418,7 +418,7 @@ export const testimonials = [
 	},
 	{
 		quote:
-			'A small inn that feels like a secret. The history of the house, the old trees, the lighthouse view at dusk — pure Staunton magic.',
+			'A small inn that feels like a secret. The history of the house, the old trees, the fog rolling over the rooftops at dusk — pure San Francisco magic.',
 		author: 'Daniel Kim',
 		location: 'Seattle, WA',
 		date: 'May 2026',
@@ -464,12 +464,12 @@ export const faqs = [
 ];
 
 export const attractions = [
-	{ name: 'Downtown Staunton', distance: '5 min walk', text: 'Boutique shops, galleries and the weekly farmers market along Beverley Street, the heart of one of America’s best small towns.', image: { stem: '/images/outdoor', alt: 'Guests exploring downtown Staunton' } },
-	{ name: 'American Shakespeare Center', distance: '6 min walk', text: 'The world’s only recreation of Shakespeare’s indoor Blackfriars Playhouse, with performances all year round.', image: { stem: '/images/room-queen', alt: 'Period interiors echoing the Blackfriars Playhouse' } },
-	{ name: 'Woodrow Wilson Presidential Library', distance: '7 min walk', text: 'The birthplace of President Woodrow Wilson — museum, gardens and the President’s own Pierce-Arrow limousine.', image: { stem: '/images/hero', alt: 'Classic interiors at the Wilson birthplace' } },
-	{ name: 'Gypsy Hill Park', distance: '4 min drive', text: '214 acres of gardens, a duck pond, golf and the summer bandstand concerts — the town’s green living room.', image: { stem: '/images/about-pool', alt: 'Lush green paths at Gypsy Hill Park' } },
-	{ name: 'Frontier Culture Museum', distance: '8 min drive', text: 'An open-air living-history museum tracing the settlers who shaped the Shenandoah Valley.', image: { stem: '/images/room-garden', alt: 'Historic farmhouse style at the Frontier Culture Museum' } },
-	{ name: 'Blue Ridge Parkway & Skyline Drive', distance: '25 min drive', text: 'America’s favourite scenic drive begins almost at our door — waterfalls, overlooks and Appalachian sunsets.', image: { stem: '/images/room-treetop', alt: 'Treetop views towards the Blue Ridge' } }
+	{ name: 'Golden Gate Park', distance: '10 min walk', text: 'A thousand acres of gardens, meadows, windmills and museums begin almost at our door — the city’s great green backyard.', image: { stem: '/images/about-pool', alt: 'Lush green paths in Golden Gate Park' } },
+	{ name: 'California Academy of Sciences', distance: '6 min drive', text: 'A rainforest dome, planetarium, aquarium and a living roof, all in one building in the heart of the park.', image: { stem: '/images/hero', alt: 'Bright museum interiors at the California Academy of Sciences' } },
+	{ name: 'The Presidio & Golden Gate Bridge', distance: '10 min drive', text: 'Forest trails, bay beaches and the walk across the Golden Gate Bridge itself — it all starts at the Presidio gate.', image: { stem: '/images/room-treetop', alt: 'View towards the Golden Gate from the Presidio' } },
+	{ name: 'Baker Beach', distance: '8 min drive', text: 'A mile of sand beneath the bridge, beloved for picnics, sunsets and the city’s most famous view.', image: { stem: '/images/outdoor', alt: 'Guests at Baker Beach below the Golden Gate Bridge' } },
+	{ name: 'de Young Museum', distance: '7 min drive', text: 'American art, textiles and rotating exhibitions in a copper-clad landmark — the observation tower is free.', image: { stem: '/images/room-queen', alt: 'Art and interiors at the de Young Museum' } },
+	{ name: 'Clement Street', distance: '5 min walk', text: 'Our own neighbourhood high street: dim sum, bookshops, bakeries and some of the city’s best-loved restaurants.', image: { stem: '/images/breakfast', alt: 'Breakfast and bakeries along Clement Street' } }
 ];
 
 export const gallery = [
@@ -498,7 +498,7 @@ export const dining = {
 	hours: 'Breakfast served daily, 7:30 AM – 10:30 AM, poolside',
 	highlights: [
 		{ name: 'The Poolside Breakfast', text: 'Fresh fruit, warm pastries, smoked salmon, farm eggs any style, and coffee that keeps coming — underneath the tropical canopy.' },
-		{ name: 'Veranda Dinners', text: 'On Fridays and Saturdays the veranda seats 24 for a three-course set menu built on Shenandoah Valley produce. Reserve ahead.' },
+		{ name: 'Veranda Dinners', text: 'On Fridays and Saturdays the veranda seats 24 for a three-course set menu built on Bay Area farm produce. Reserve ahead.' },
 		{ name: 'Afternoon Tea', text: 'Scones, finger sandwiches and leaf tea in the garden at 3:00 PM, Wednesday to Sunday. Included for suite guests on Sundays.' }
 	],
 	menu: [
@@ -519,15 +519,15 @@ export const weddingPackages = [
 
 export const blogPosts = [
 	{
-		slug: 'weekend-guide-staunton',
-		title: 'A Perfect Weekend in Staunton: Our 48-Hour Guide',
+		slug: 'weekend-guide-san-francisco',
+		title: 'A Perfect Weekend in San Francisco: Our 48-Hour Guide',
 		date: 'November 8, 2026',
-		excerpt: 'Shakespeare by candlelight, a presidential birthplace, and the best breakfast in the Valley — here is how our guests spend two perfect days.',
-		image: { stem: '/images/outdoor', alt: 'Guests exploring Staunton for the weekend' },
+		excerpt: 'Golden Gate Park mornings, a rainforest in the middle of the city, and dinner on the veranda — here is how our guests spend two perfect days.',
+		image: { stem: '/images/outdoor', alt: 'Guests exploring San Francisco for the weekend' },
 		body: [
-			'Start with breakfast by our pool, then walk five minutes into downtown Staunton. Beverley Street’s independent shops and galleries fill an easy morning, and the farmers market on Saturday is not to be missed.',
-			'In the afternoon, step into the Blackfriars Playhouse at the American Shakespeare Center — the only recreation of Shakespeare’s indoor theatre in the world. Evenings belong to the veranda: dinner, a glass of Virginia wine, and the lighthouse light sweeping the bay.',
-			'On day two, drive eight minutes to the Frontier Culture Museum, then finish with a spa treatment back at the inn. That is the weekend our guests write home about.'
+			'Start with breakfast by our pool, then walk ten minutes into Golden Gate Park. The gardens, the Japanese Tea Garden and the Conservatory of Flowers fill an easy morning, and the Clement Street farmers market on Sunday is not to be missed.',
+			'In the afternoon, step under the living roof of the California Academy of Sciences — rainforest, reef and planetarium in one building. Evenings belong to the veranda: dinner, a glass of Napa wine, and the fog rolling in over the rooftops.',
+			'On day two, walk the Presidio trails down to Baker Beach and across the Golden Gate, then finish with a spa treatment back at the inn. That is the weekend our guests write home about.'
 		]
 	},
 	{

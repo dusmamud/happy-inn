@@ -9,20 +9,20 @@
 		{ title: 'Address', text: site.contact.address },
 		{ title: 'Check-In / Out', text: `Check-in from ${site.checkInTime} · check-out until ${site.checkOutTime}. Early check-in from 1:00 PM for direct bookings.` },
 		{ title: 'Parking', text: 'Complimentary on-site parking for one car per room, plus two EV charging points by the garden gate.' },
-		{ title: 'Getting Here', text: 'Staunton Amtrak station is a 6-minute walk. Shenandoah Valley Regional Airport (SHD) is 20 minutes by car — ask us about transfers.' }
+		{ title: 'Getting Here', text: 'The 38 Geary Muni bus stops two blocks away and runs straight downtown. SFO airport is about 35 minutes by car — ask us about transfers.' }
 	];
 </script>
 
 <svelte:head>
 	<title>About The Area — The Happy Inn</title>
-	<meta name="description" content="What to see and do around The Happy Inn in Staunton, Virginia — downtown, Shakespeare, the Blue Ridge Parkway, plus arrival, parking and check-in information." />
+	<meta name="description" content="What to see and do around The Happy Inn in San Francisco — Golden Gate Park, the Presidio, Baker Beach and Clement Street, plus arrival, parking and check-in information." />
 </svelte:head>
 
 <main id="main">
 	<PageHero
 		eyebrow="Explore"
 		title="About The Area"
-		intro="Staunton was voted one of the best small towns in America — here is what our guests love within minutes of the inn."
+		intro="Golden Gate Park, the Presidio and the bay — here is what our guests love within minutes of the inn."
 		stem="/images/outdoor"
 		alt="Guests sightseeing outdoors near the inn"
 	/>
@@ -58,7 +58,7 @@
 			</div>
 			<p class="mt-7 flex flex-wrap gap-3">
 				<a href="/contact" class="bg-gold-deep px-6 py-3 text-[11px] font-semibold tracking-[0.14em] text-white uppercase transition-colors hover:bg-gold">Ask Us Anything</a>
-				<a href="https://maps.google.com/?q=Staunton,+VA" target="_blank" rel="noreferrer" class="border border-white/40 px-6 py-3 text-[11px] font-semibold tracking-[0.14em] text-white uppercase transition-colors hover:border-gold-soft hover:text-gold-soft">Open In Maps</a>
+				<a href="https://maps.google.com/?q=4319+Roosevelt+Street,+San+Francisco,+CA" target="_blank" rel="noreferrer" class="border border-white/40 px-6 py-3 text-[11px] font-semibold tracking-[0.14em] text-white uppercase transition-colors hover:border-gold-soft hover:text-gold-soft">Open In Maps</a>
 			</p>
 		</div>
 	</section>

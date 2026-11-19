@@ -11,7 +11,7 @@
 
 <svelte:head>
 	<title>Gallery — The Happy Inn</title>
-	<meta name="description" content="Photos of The Happy Inn — rooms, spa and pool, dining, weddings and the Staunton area." />
+	<meta name="description" content="Photos of The Happy Inn — rooms, spa and pool, dining, weddings and the San Francisco area." />
 </svelte:head>
 
 <main id="main">

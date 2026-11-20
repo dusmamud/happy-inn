@@ -31,7 +31,8 @@
 	eyebrow="Gift Cards"
 	title="Give A Stay At The Inn"
 	intro="The gift that always fits: a night (or a whole weekend) under the palms, delivered by email in minutes."
-	image={{ stem: '/images/about-pool', alt: 'The boardwalk to the pool at The Happy Inn' }}
+	stem="/images/about-pool"
+	alt="The boardwalk to the pool at The Happy Inn"
 />
 
 <section class="mx-auto max-w-6xl px-4 pt-16 lg:pt-24">

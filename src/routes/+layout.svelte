@@ -40,6 +40,9 @@
 	<meta name="description" content={site.description} />
 	<link rel="canonical" href={site.url + page.url.pathname} />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="manifest" href="/manifest.webmanifest" />
+	<meta name="theme-color" content="#26221c" />
+	<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content={site.name} />
 	<meta property="og:title" content="{site.name} — {site.tagline}" />
@@ -77,5 +80,5 @@
 			<Icon name="check" class="h-4 w-4" /> Book Now
 		</a>
 	</div>
-	<div class="h-16 lg:hidden" aria-hidden="true"></div>
+	<div class="h-16 bg-coal-deep lg:hidden" aria-hidden="true"></div>
 {/if}

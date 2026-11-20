@@ -116,8 +116,8 @@
 						<p class="mt-1 text-[13px] text-ink/80">{booking.checkIn.month}</p>
 						<p class="font-serif text-4xl leading-none text-ink">{String(inDay).padStart(2, '0')}</p>
 						<p class="mt-2 flex items-center justify-center gap-3">
-							<button type="button" onclick={() => step('in', -1)} aria-label="Check-in day earlier" class="inline-flex h-8 w-8 items-center justify-center text-gold-deep hover:bg-mist"><Icon name="chevron-down" class="h-4 w-4 rotate-90" /></button>
-							<button type="button" onclick={() => step('in', 1)} aria-label="Check-in day later" class="inline-flex h-8 w-8 items-center justify-center text-gold-deep hover:bg-mist"><Icon name="chevron-down" class="h-4 w-4 -rotate-90" /></button>
+							<button type="button" onclick={() => step('in', -1)} aria-label="Check-in day earlier" class="inline-flex h-10 w-10 items-center justify-center text-gold-deep hover:bg-mist"><Icon name="chevron-down" class="h-4 w-4 rotate-90" /></button>
+							<button type="button" onclick={() => step('in', 1)} aria-label="Check-in day later" class="inline-flex h-10 w-10 items-center justify-center text-gold-deep hover:bg-mist"><Icon name="chevron-down" class="h-4 w-4 -rotate-90" /></button>
 						</p>
 					</div>
 					<div class="px-4 py-4 text-center">
@@ -125,8 +125,8 @@
 						<p class="mt-1 text-[13px] text-ink/80">{booking.checkOut.month}</p>
 						<p class="font-serif text-4xl leading-none text-ink">{String(outDay).padStart(2, '0')}</p>
 						<p class="mt-2 flex items-center justify-center gap-3">
-							<button type="button" onclick={() => step('out', -1)} aria-label="Check-out day earlier" class="inline-flex h-8 w-8 items-center justify-center text-gold-deep hover:bg-mist"><Icon name="chevron-down" class="h-4 w-4 rotate-90" /></button>
-							<button type="button" onclick={() => step('out', 1)} aria-label="Check-out day later" class="inline-flex h-8 w-8 items-center justify-center text-gold-deep hover:bg-mist"><Icon name="chevron-down" class="h-4 w-4 -rotate-90" /></button>
+							<button type="button" onclick={() => step('out', -1)} aria-label="Check-out day earlier" class="inline-flex h-10 w-10 items-center justify-center text-gold-deep hover:bg-mist"><Icon name="chevron-down" class="h-4 w-4 rotate-90" /></button>
+							<button type="button" onclick={() => step('out', 1)} aria-label="Check-out day later" class="inline-flex h-10 w-10 items-center justify-center text-gold-deep hover:bg-mist"><Icon name="chevron-down" class="h-4 w-4 -rotate-90" /></button>
 						</p>
 					</div>
 					<div class="px-4 py-4 text-center">
@@ -134,8 +134,8 @@
 						<p class="mt-1 text-[13px] text-ink/80">Adults</p>
 						<p class="font-serif text-4xl leading-none text-ink">{String(guests).padStart(2, '0')}</p>
 						<p class="mt-2 flex items-center justify-center gap-3">
-							<button type="button" onclick={() => step('guests', -1)} aria-label="Fewer guests" class="inline-flex h-8 w-8 items-center justify-center text-gold-deep hover:bg-mist"><Icon name="chevron-down" class="h-4 w-4 rotate-90" /></button>
-							<button type="button" onclick={() => step('guests', 1)} aria-label="More guests" class="inline-flex h-8 w-8 items-center justify-center text-gold-deep hover:bg-mist"><Icon name="chevron-down" class="h-4 w-4 -rotate-90" /></button>
+							<button type="button" onclick={() => step('guests', -1)} aria-label="Fewer guests" class="inline-flex h-10 w-10 items-center justify-center text-gold-deep hover:bg-mist"><Icon name="chevron-down" class="h-4 w-4 rotate-90" /></button>
+							<button type="button" onclick={() => step('guests', 1)} aria-label="More guests" class="inline-flex h-10 w-10 items-center justify-center text-gold-deep hover:bg-mist"><Icon name="chevron-down" class="h-4 w-4 -rotate-90" /></button>
 						</p>
 					</div>
 				</div>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Icon from '#lib/components/Icon.svelte';
-	import { perks, rooms, spaTreatments } from '#lib/site.ts';
+	import { perks, promoCodes, rooms, spaTreatments } from '#lib/site.ts';
 
 	const extras = [
 		{ id: 'facial', label: 'Signature Facial (per guest)', price: 95 },
@@ -39,8 +39,23 @@
 		extras.filter((e) => chosen.includes(e.id)).reduce((sum, e) => sum + e.price * (e.id === 'facial' || e.id === 'massage' ? guests : 1), 0)
 	);
 	const subtotal = $derived(Math.max(nights, 0) * room.price + extrasTotal);
-	const tax = $derived(Math.round(subtotal * 0.12));
-	const total = $derived(subtotal + tax);
+	let promoInput = $state('');
+	let appliedPromo = $state('');
+	let promoError = $state('');
+	const discount = $derived(appliedPromo ? Math.round(subtotal * (promoCodes[appliedPromo].percent / 100)) : 0);
+	const tax = $derived(Math.round((subtotal - discount) * 0.12));
+	const total = $derived(subtotal - discount + tax);
+
+	function applyPromo() {
+		const code = promoInput.trim().toUpperCase();
+		if (code && promoCodes[code]) {
+			appliedPromo = code;
+			promoError = '';
+		} else {
+			appliedPromo = '';
+			promoError = 'That code is not active. Try HAPPY10 for 10% off.';
+		}
+	}
 	const money = (n: number) => `$${n.toLocaleString('en-US')}`;
 
 	function submit(event: SubmitEvent) {
@@ -140,9 +155,19 @@
 				<div class="flex justify-between gap-4"><dt class="text-white/85">Nights</dt><dd class="font-medium">{Math.max(nights, 0)}</dd></div>
 				<div class="flex justify-between gap-4"><dt class="text-white/85">{money(room.price)} × {Math.max(nights, 0)} nights</dt><dd class="font-medium">{money(Math.max(nights, 0) * room.price)}</dd></div>
 				{#if extrasTotal > 0}<div class="flex justify-between gap-4"><dt class="text-white/85">Extras</dt><dd class="font-medium">{money(extrasTotal)}</dd></div>{/if}
+				{#if discount > 0}<div class="flex justify-between gap-4"><dt class="text-gold-soft">Promo {appliedPromo} (−{promoCodes[appliedPromo].percent}%)</dt><dd class="font-medium text-gold-soft">−{money(discount)}</dd></div>{/if}
 				<div class="flex justify-between gap-4"><dt class="text-white/85">Taxes & fees (12%)</dt><dd class="font-medium">{money(tax)}</dd></div>
 				<div class="flex justify-between gap-4 border-t border-white/20 pt-3 text-base"><dt class="font-semibold">Total</dt><dd class="font-serif text-xl text-gold-soft">{money(total)}</dd></div>
 			</dl>
+			<div class="mt-5">
+				<label for="bk-promo" class="text-sm font-semibold">Promo Code</label>
+				<div class="mt-1.5 flex gap-2">
+					<input id="bk-promo" bind:value={promoInput} placeholder="HAPPY10" autocomplete="off" class="min-w-0 flex-1 border border-white/30 bg-white/10 px-3.5 py-2.5 text-white placeholder:text-white/60 focus:border-gold-soft focus:outline-none" />
+					<button type="button" onclick={applyPromo} class="shrink-0 border border-gold-soft px-4 py-2.5 text-[11px] font-semibold tracking-[0.14em] text-gold-soft uppercase transition-colors hover:bg-gold-soft hover:text-coal">Apply</button>
+				</div>
+				{#if appliedPromo}<p class="mt-2 text-xs text-gold-soft" role="status">{promoCodes[appliedPromo].label} applied.</p>{/if}
+				{#if promoError}<p class="mt-2 text-xs text-red-200" role="alert">{promoError}</p>{/if}
+			</div>
 			<p class="mt-4 text-xs leading-relaxed text-white/85">Total shown before you book — no hidden fees. Free cancellation up to 48 hours before arrival. Nothing is charged today in this demo.</p>
 			<button type="submit" class="mt-5 w-full bg-gold-deep px-6 py-4 text-[12px] font-semibold tracking-[0.16em] text-white uppercase transition-colors hover:bg-gold">
 				Confirm Booking

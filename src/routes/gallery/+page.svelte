@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Icon from '#lib/components/Icon.svelte';
 	import PageHero from '#lib/components/PageHero.svelte';
 	import Picture from '#lib/components/Picture.svelte';
 	import Reveal from '#lib/components/Reveal.svelte';
@@ -7,6 +8,22 @@
 	const categories = ['All', ...new Set(gallery.map((g) => g.category))];
 	let active = $state('All');
 	const shown = $derived(active === 'All' ? gallery : gallery.filter((g) => g.category === active));
+
+	let dialog: HTMLDialogElement | null = $state(null);
+	let selected = $state(0);
+	const current = $derived(shown[selected]);
+
+	function open(i: number) {
+		selected = i;
+		dialog?.showModal();
+	}
+	function step(d: number) {
+		selected = (selected + d + shown.length) % shown.length;
+	}
+	function onKey(e: KeyboardEvent) {
+		if (e.key === 'ArrowRight') step(1);
+		if (e.key === 'ArrowLeft') step(-1);
+	}
 </script>
 
 <svelte:head>
@@ -38,18 +55,39 @@
 			{/each}
 		</div>
 		<div class="mt-9 grid grid-cols-2 gap-3 lg:grid-cols-3">
-			{#each shown as image (image.stem + image.alt)}
+			{#each shown as image, i (image.stem + image.alt)}
 				<Reveal>
-					<figure class="group relative overflow-hidden">
+					<button type="button" onclick={() => open(i)} class="group relative block w-full overflow-hidden text-left" aria-label="View larger: {image.alt}">
 						<span class="block [&_img]:aspect-[4/3] [&_img]:w-full [&_img]:object-cover [&_img]:transition-transform [&_img]:duration-500 group-hover:[&_img]:scale-105 [&_picture]:block">
 							<Picture stem={image.stem} alt={image.alt} width={1000} height={750} sizes="(max-width: 1024px) 50vw, 360px" />
 						</span>
-						<figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/75 to-transparent px-4 pt-10 pb-3 text-sm text-white">
+						<span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/75 to-transparent px-4 pt-10 pb-3 text-sm text-white">
 							{image.alt} <span class="text-gold-soft">· {image.category}</span>
-						</figcaption>
-					</figure>
+						</span>
+						<span class="absolute top-3 right-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-ink/50 text-white opacity-0 transition-opacity group-hover:opacity-100"><Icon name="search" class="h-4 w-4" /></span>
+					</button>
 				</Reveal>
 			{/each}
 		</div>
 	</section>
+
+	<dialog
+		bind:this={dialog}
+		onkeydown={onKey}
+		class="m-auto w-[min(92vw,880px)] bg-coal p-0 text-white backdrop:bg-ink/80"
+		aria-label="Photo viewer"
+	>
+		{#if current}
+			<div class="relative">
+				<Picture stem={current.stem} alt={current.alt} width={1600} height={1067} eager sizes="92vw" imgClass="aspect-[3/2] w-full object-cover" />
+				<button type="button" onclick={() => dialog?.close()} aria-label="Close photo viewer" class="absolute top-3 right-3 inline-flex h-11 w-11 items-center justify-center rounded-full bg-ink/60 text-white transition-colors hover:bg-ink"><Icon name="close" class="h-5 w-5" /></button>
+				<button type="button" onclick={() => step(-1)} aria-label="Previous photo" class="absolute top-1/2 left-3 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-ink/60 text-white transition-colors hover:bg-ink"><Icon name="chevron-down" class="h-5 w-5 rotate-90" /></button>
+				<button type="button" onclick={() => step(1)} aria-label="Next photo" class="absolute top-1/2 right-3 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-ink/60 text-white transition-colors hover:bg-ink"><Icon name="chevron-down" class="h-5 w-5 -rotate-90" /></button>
+			</div>
+			<p class="flex items-center justify-between gap-4 px-5 py-4 text-sm">
+				<span>{current.alt} <span class="text-gold-soft">· {current.category}</span></span>
+				<span class="shrink-0 text-white/75">{selected + 1} / {shown.length}</span>
+			</p>
+		{/if}
+	</dialog>
 </main>

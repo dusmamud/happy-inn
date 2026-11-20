@@ -30,7 +30,7 @@
 							target="_blank"
 							rel="noreferrer"
 							aria-label="The Happy Inn on {social.label}"
-							class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:border-gold-soft hover:text-gold-soft"
+							class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:border-gold-soft hover:text-gold-soft"
 						>
 							<Icon name={social.name} class="h-4 w-4" />
 						</a>

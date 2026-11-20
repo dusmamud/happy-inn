@@ -164,3 +164,12 @@ describe('features and footer', () => {
 		expect(footer.copyright).toBe('© 2017 The Happy Inn - All Rights Reserved.');
 	});
 });
+
+describe('round-2 additions', () => {
+	it('gift cards ascend in price and promo codes are sane', async () => {
+		const { giftCards, promoCodes, loyalty } = await import('./site.ts');
+		expect(giftCards.map((c) => c.amount)).toEqual([100, 250, 500]);
+		expect(promoCodes.HAPPY10.percent).toBe(10);
+		expect(loyalty.tiers).toHaveLength(3);
+	});
+});

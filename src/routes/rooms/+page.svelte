@@ -4,6 +4,16 @@
 	import RoomCard from '#lib/components/RoomCard.svelte';
 	import { perks, rooms } from '#lib/site.ts';
 	import Icon from '#lib/components/Icon.svelte';
+
+	let sort = $state('recommended');
+	let minGuests = $state(1);
+	const shown = $derived.by(() => {
+		const list = rooms.filter((r) => r.occupancy >= minGuests);
+		if (sort === 'price-asc') return [...list].sort((a, b) => a.price - b.price);
+		if (sort === 'price-desc') return [...list].sort((a, b) => b.price - a.price);
+		if (sort === 'sleeps') return [...list].sort((a, b) => b.occupancy - a.occupancy);
+		return list;
+	});
 </script>
 
 <svelte:head>
@@ -20,8 +30,32 @@
 		alt="Treetop Suite windows above the neighbourhood canopy"
 	/>
 	<section class="mx-auto max-w-6xl px-4 py-14 lg:py-16" aria-label="All rooms">
+		<div class="mb-8 flex flex-wrap items-end gap-4">
+			<div>
+				<label for="room-sort" class="text-[13px] font-semibold tracking-wide text-ink">Sort Rooms</label>
+				<select id="room-sort" bind:value={sort} class="mt-1.5 block border border-linen bg-white px-3.5 py-2.5 text-ink focus:border-gold-deep focus:outline-none">
+					<option value="recommended">Recommended</option>
+					<option value="price-asc">Price: Low To High</option>
+					<option value="price-desc">Price: High To Low</option>
+					<option value="sleeps">Sleeps Most First</option>
+				</select>
+			</div>
+			<div>
+				<label for="room-guests" class="text-[13px] font-semibold tracking-wide text-ink">Guests</label>
+				<select id="room-guests" bind:value={minGuests} class="mt-1.5 block border border-linen bg-white px-3.5 py-2.5 text-ink focus:border-gold-deep focus:outline-none">
+					<option value={1}>Any</option>
+					<option value={2}>2+</option>
+					<option value={3}>3+</option>
+					<option value={4}>4</option>
+				</select>
+			</div>
+			<p class="pb-3 text-sm text-ink/75" role="status">{shown.length} of {rooms.length} rooms</p>
+		</div>
+		{#if shown.length === 0}
+			<p class="border border-linen bg-mist px-5 py-8 text-center text-ink/85">No single room sleeps that many — for groups, book two rooms or ask us about the Whole Inn option on the <a href="/weddings" class="font-semibold text-gold-deep underline">Weddings & Events</a> page.</p>
+		{/if}
 		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-			{#each rooms as room, i (room.slug)}
+			{#each shown as room, i (room.slug)}
 				<Reveal delay={(i % 3) * 0.07}>
 					<RoomCard {room} />
 				</Reveal>

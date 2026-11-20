@@ -365,6 +365,27 @@ export const offers = [
 	}
 ];
 
+export const giftCards = [
+	{ amount: 100, name: 'The Weekender', text: 'A gentle nudge towards a night away — covers a Garden Room night in the quiet season, breakfast included.', perk: 'Delivered by email in minutes' },
+	{ amount: 250, name: 'The Escape', text: 'Two nights in a suite with breakfast each morning and a spa treatment for one.', perk: 'Most popular' },
+	{ amount: 500, name: 'The Whole Inn Feeling', text: 'A suite weekend with spa rituals for two, a veranda dinner and a very late check-out.', perk: 'Valid 24 months, any dates' }
+];
+
+export const promoCodes: Record<string, { percent: number; label: string }> = {
+	HAPPY10: { percent: 10, label: '10% off your stay' },
+	GOLDEN15: { percent: 15, label: '15% off suites' }
+};
+
+export const loyalty = {
+	title: 'Happy Returns — Our Loyalty Circle',
+	text: 'Direct bookers join free. Every stay earns a stamp; five stamps earn a free night, and members always get the spa discount, late check-out and first refusal on garden-view rooms.',
+	tiers: [
+		{ name: 'Guest', stays: '1–2 stays', perks: ['10% spa discount', 'Late check-out when free'] },
+		{ name: 'Regular', stays: '3–4 stays', perks: ['Free room upgrade when available', 'Welcome drink on arrival'] },
+		{ name: 'Inner Circle', stays: '5+ stays', perks: ['Every 5th night free', 'Veranda dinner for two, once a year'] }
+	]
+};
+
 export const testimonials = [
 	{
 		quote:
@@ -567,6 +588,7 @@ export const footer = {
 				{ label: 'Room Overview', href: '/rooms' },
 				{ label: 'Our Amenities', href: '/spa' },
 				{ label: 'Specials', href: '/specials' },
+				{ label: 'Gift Cards', href: '/gift-cards' },
 				{ label: 'Packages', href: '/specials' },
 				{ label: 'Pet Friendly', href: '/faq' }
 			]

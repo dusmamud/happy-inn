@@ -41,6 +41,32 @@
 		<div class="mt-10 overflow-hidden [&_img]:aspect-[21/9] [&_img]:w-full [&_img]:object-cover [&_picture]:block">
 			<Picture stem="/images/wedding" alt="Wedding celebration in the inn garden" width={1600} height={700} sizes="100vw" />
 		</div>
+
+		<div class="mt-12 grid gap-6 lg:grid-cols-2">
+			<div class="bg-mist p-7 sm:p-9">
+				<h2 class="font-serif text-[28px] font-medium text-ink">Meetings & Small Events</h2>
+				<p class="mt-3 text-[15px] leading-relaxed text-ink/85">
+					The veranda room seats 24 boardroom-style or 40 theatre-style, with garden breaks, veranda lunches and
+					rooms upstairs for anyone who would rather not drive home. Day-delegate rate from $65 per person,
+					including coffee, lunch and parking.
+				</p>
+				<ul class="mt-4 space-y-2 text-sm leading-relaxed text-ink/85">
+					<li class="flex gap-2"><Icon name="check" class="mt-0.5 h-4 w-4 shrink-0 text-gold-deep" /> Projector, screen & fast Wi-Fi included</li>
+					<li class="flex gap-2"><Icon name="check" class="mt-0.5 h-4 w-4 shrink-0 text-gold-deep" /> Half-day and full-day hire</li>
+					<li class="flex gap-2"><Icon name="check" class="mt-0.5 h-4 w-4 shrink-0 text-gold-deep" /> Retreat add-ons: spa sessions & garden dinners</li>
+				</ul>
+				<a href="/contact" class="mt-6 inline-block bg-ink px-6 py-3.5 text-[11px] font-semibold tracking-[0.14em] text-white uppercase transition-colors hover:bg-gold-deep">Plan An Event</a>
+			</div>
+			<div class="bg-coal p-7 text-white sm:p-9">
+				<h2 class="font-serif text-[28px] font-medium">Good To Know</h2>
+				<ul class="mt-4 space-y-3 text-[15px] leading-relaxed text-white/90">
+					<li class="flex gap-2.5"><Icon name="check" class="mt-1 h-4 w-4 shrink-0 text-gold-soft" /> Garden events run until 10:00 PM; the veranda until midnight.</li>
+					<li class="flex gap-2.5"><Icon name="check" class="mt-1 h-4 w-4 shrink-0 text-gold-soft" /> A 25% deposit confirms your date; the balance is due 14 days before.</li>
+					<li class="flex gap-2.5"><Icon name="check" class="mt-1 h-4 w-4 shrink-0 text-gold-soft" /> Rain plan included: the 1904 veranda seats the full party under cover.</li>
+					<li class="flex gap-2.5"><Icon name="check" class="mt-1 h-4 w-4 shrink-0 text-gold-soft" /> Every package includes a planning session with our events coordinator.</li>
+				</ul>
+			</div>
+		</div>
 	</section>
 	<Testimonials limit={3} />
 </main>

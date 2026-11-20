@@ -8,6 +8,7 @@ export function GET() {
 		'rooms',
 		...rooms.map((room) => `rooms/${room.slug}`),
 		'specials',
+		'gift-cards',
 		'about',
 		'area',
 		'gallery',

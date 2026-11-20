@@ -40,9 +40,9 @@ test('faq accordion expands answers', async ({ page }) => {
 
 test('gallery filter narrows the photos', async ({ page }) => {
 	await page.goto('/gallery');
-	const all = await page.locator('main figure').count();
+	const all = await page.locator('main button[aria-label^="View larger"]').count();
 	await page.getByRole('button', { name: 'Dining' }).click();
-	const dining = await page.locator('main figure').count();
+	const dining = await page.locator('main button[aria-label^="View larger"]').count();
 	expect(dining).toBeLessThan(all);
 	expect(dining).toBeGreaterThan(0);
 });

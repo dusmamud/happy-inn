@@ -6,9 +6,9 @@
 	import Icon from '#lib/components/Icon.svelte';
 
 	let sort = $state('recommended');
-	let minGuests = $state(1);
+	let minSize = $state(0);
 	const shown = $derived.by(() => {
-		const list = rooms.filter((r) => r.occupancy >= minGuests);
+		const list = rooms.filter((r) => parseInt(r.size) >= minSize);
 		if (sort === 'price-asc') return [...list].sort((a, b) => a.price - b.price);
 		if (sort === 'price-desc') return [...list].sort((a, b) => b.price - a.price);
 		if (sort === 'sleeps') return [...list].sort((a, b) => b.occupancy - a.occupancy);
@@ -41,12 +41,11 @@
 				</select>
 			</div>
 			<div>
-				<label for="room-guests" class="text-[13px] font-semibold tracking-wide text-ink">Guests</label>
-				<select id="room-guests" bind:value={minGuests} class="mt-1.5 block border border-linen bg-white px-3.5 py-2.5 text-ink focus:border-gold-deep focus:outline-none">
-					<option value={1}>Any</option>
-					<option value={2}>2+</option>
-					<option value={3}>3+</option>
-					<option value={4}>4</option>
+				<label for="room-size" class="text-[13px] font-semibold tracking-wide text-ink">Room Size</label>
+				<select id="room-size" bind:value={minSize} class="mt-1.5 block border border-linen bg-white px-3.5 py-2.5 text-ink focus:border-gold-deep focus:outline-none">
+					<option value={0}>Any Size</option>
+					<option value={350}>350+ sq ft</option>
+					<option value={400}>400+ sq ft</option>
 				</select>
 			</div>
 			<p class="pb-3 text-sm text-ink/75" role="status">{shown.length} of {rooms.length} rooms</p>

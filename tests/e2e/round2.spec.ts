@@ -11,13 +11,13 @@ test.describe('round-2 additions', () => {
 		await expect(page.getByRole('heading', { name: 'Gift Card On Its Way' })).toBeVisible();
 	});
 
-	test('rooms page sorts by price and filters by guests', async ({ page }) => {
+	test('rooms page sorts by price and filters by size', async ({ page }) => {
 		await page.goto('/rooms');
 		const cards = page.locator('section[aria-label="All rooms"] article');
 		await expect(cards).toHaveCount(4);
 		await page.getByLabel('Sort Rooms').selectOption('price-asc');
 		await expect(cards.first().getByRole('heading')).toHaveText('Garden Room');
-		await page.getByLabel('Guests').selectOption('4');
+		await page.getByLabel('Room Size').selectOption('400');
 		await expect(cards).toHaveCount(1);
 		await expect(page.getByText('1 of 4 rooms')).toBeVisible();
 	});

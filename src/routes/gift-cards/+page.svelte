@@ -3,7 +3,7 @@
 	import PageHero from '#lib/components/PageHero.svelte';
 	import Picture from '#lib/components/Picture.svelte';
 	import Reveal from '#lib/components/Reveal.svelte';
-	import { giftCards, site } from '#lib/site';
+	import { giftCards, site } from '#lib/site.ts';
 
 	let amount = $state(250);
 	let recipient = $state('');
@@ -74,7 +74,7 @@
 				{/each}
 			</ol>
 			<div class="mt-8 hidden lg:block">
-				<Picture stem="/images/breakfast" alt="Breakfast by the pool — the morning every gift card includes" sizes="(min-width: 1024px) 560px, 100vw" imgClass="aspect-[16/10] w-full object-cover" />
+				<Picture stem="/images/breakfast" alt="Breakfast by the pool — the morning every gift card includes" sizes="(min-width: 1024px) 560px, 100vw" class="aspect-[16/10] w-full object-cover" />
 			</div>
 		</Reveal>
 

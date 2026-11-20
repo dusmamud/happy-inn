@@ -79,7 +79,7 @@
 	>
 		{#if current}
 			<div class="relative">
-				<Picture stem={current.stem} alt={current.alt} width={1600} height={1067} eager sizes="92vw" imgClass="aspect-[3/2] w-full object-cover" />
+				<Picture stem={current.stem} alt={current.alt} width={1600} height={1067} eager sizes="92vw" class="aspect-[3/2] w-full object-cover" />
 				<button type="button" onclick={() => dialog?.close()} aria-label="Close photo viewer" class="absolute top-3 right-3 inline-flex h-11 w-11 items-center justify-center rounded-full bg-ink/60 text-white transition-colors hover:bg-ink"><Icon name="close" class="h-5 w-5" /></button>
 				<button type="button" onclick={() => step(-1)} aria-label="Previous photo" class="absolute top-1/2 left-3 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-ink/60 text-white transition-colors hover:bg-ink"><Icon name="chevron-down" class="h-5 w-5 rotate-90" /></button>
 				<button type="button" onclick={() => step(1)} aria-label="Next photo" class="absolute top-1/2 right-3 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-ink/60 text-white transition-colors hover:bg-ink"><Icon name="chevron-down" class="h-5 w-5 -rotate-90" /></button>

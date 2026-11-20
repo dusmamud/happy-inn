@@ -27,6 +27,7 @@
 	<meta name="description" content="Give a stay at The Happy Inn in San Francisco — gift cards from $100, delivered by email in minutes, valid 24 months on any dates." />
 </svelte:head>
 
+<main id="main">
 <PageHero
 	eyebrow="Gift Cards"
 	title="Give A Stay At The Inn"
@@ -114,3 +115,4 @@
 		</Reveal>
 	</div>
 </section>
+</main>
